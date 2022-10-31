@@ -13,6 +13,7 @@ class MyTasksPage extends StatefulWidget {
 
 class _MyTasksPageState extends State<MyTasksPage> {
   var controller = MyTasksStore();
+
   final _textFieldController = TextEditingController();
   @override
   void initState() {
@@ -29,11 +30,12 @@ class _MyTasksPageState extends State<MyTasksPage> {
             title: const Text('My Tasks'),
             actions: [
               Switch.adaptive(
-                  value: controller.isSharedPref,
-                  onChanged: (value) {
-                    controller.setIsSharedPref(value);
-                    controller.loadTask();
-                  }),
+                value: controller.isSharedPref,
+                onChanged: (value) {
+                  controller.setIsSharedPref(value);
+                  controller.loadTask();
+                },
+              ),
             ],
             leading: IconButton(
               icon: const Icon(Icons.clear),

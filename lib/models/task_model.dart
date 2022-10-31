@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class TaskModel {
   late int? id;
   late String? taskName;
@@ -10,6 +8,7 @@ class TaskModel {
     required this.taskName,
     required this.isFinished,
   });
+
   TaskModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     taskName = json['taskName'];

@@ -19,8 +19,7 @@ class MyTasksRepository {
     final _database = await SharedPref.instance.database;
     var tasks = _database.getString('listTasks');
     if (tasks == null) return <TaskModel>[];
-    var x = jsonDecode(tasks);
-    return ListTaskModel.fromJson(x).listTasks;
+    return ListTaskModel.fromJson(jsonDecode(tasks)).listTasks;
   }
 
   Future<void> deleteTasksSharedPref() async {
